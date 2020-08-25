@@ -3,7 +3,7 @@ const hash = (key, size) => {
   for(let i = 0; i < key.length; i++){
     hashedKey = key.charCodeAt(i)
   }
-  return hashedKey % 20
+  return hashedKey % size
 }
 
 class HashTable {
@@ -62,7 +62,7 @@ hashTable.insert('darien', 'tuxedo mask')
 console.log(hashTable.search('rei'))
 console.log(hashTable.search('lita'))
 console.log(hashTable.search('serena'))
-hashTable.remove('darien')
+// hashTable.remove('darien')
 hashTable.remove('mina')
 
 console.log(hashTable)

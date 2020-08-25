@@ -41,33 +41,17 @@ const coinChange = (coins, amount) => {
                    }
                    numOfCoins = numOfCoins - 1
               }   
-              coinPouch[i][j] = minValue(minNumOfCoinsCurrentlyRequired, coinPouch[i-1][j])
+              coinPouch[i][j] = Math.min(minNumOfCoinsCurrentlyRequired, coinPouch[i-1][j])
           }
       }
   }
-  console.log(coinss)
-  console.log(coinPouch)               
-
   if(coinPouch[coins.length][amount] == 0){
       return -1
   } else {
       return coinPouch[coins.length][amount]    
-  }
-  
+  } 
 }
 
-const minValue = (current, previous) => {
-   if (current == 0 && previous == 0){
-         return 0
-   } else if(current == 0) {
-      return previous
-   } else if(previous == 0) {
-       return current
-   } else if (current > previous){
-       return previous
-   } else {
-       return current
-   } 
-}
+
 
 coinChange([186,419,83,408], 6249)

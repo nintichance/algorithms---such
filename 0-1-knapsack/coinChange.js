@@ -45,12 +45,9 @@ const change = (amount, coins) => {
           }
         }
       }   
-
-      console.log(changePouch)
-
       variations = changePouch[coins.length][amount]
   }
   return variations
 }
 
-console.log(change(133, [1,2,5]))
+console.log(change(5, [1,2,5]))
